@@ -1,0 +1,110 @@
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #fdf5c9;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container hr {
+    width: 100%; /* Adjust the width as per design */
+    border: none;
+    height: 1px; 
+    background-color: #55413b;
+    margin: 20px auto; /* Center align the hr */
+  }
+  
+
+.footer-segments {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    /* justify-content: center; */
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.company-tagline, .quick-links, .services-container, .connect-links {
+    padding: 1rem 1rem;
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: space-around;
+    align-items: self-start;
+}
+
+.company-tagline h2 {
+    /* color: #55413b; */
+    font-size: 1.3rem;
+    background: linear-gradient(to right, #55413b, #c1c1bf, #55413b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.company-tagline p {
+    color: #55413b;
+    text-align: start;
+}
+
+.quick-links-items p {
+    color: #55413b;
+    text-align: start;
+}
+
+.quick-links-heading h2{
+    color: #55413b;
+}
+.services-container-items p {
+    color: #55413b;
+    text-align: start;
+}
+
+.services-container-heading h2{
+    color: #55413b;
+}
+
+.connect-links-heading h2{
+    color: #55413b;
+}
+
+.connect-links-socials {
+    color: #55413b;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.connect-links-socials div {
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.connect-links-socials div:hover {
+    color: #fdf5c9;
+    background-color: #55413b;
+}
+
+.rights-statement p {
+    color: gray;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .footer-segments {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .company-tagline, .quick-links, .services-container, .connect-links {
+        width: 80%;
+    }
+
+    .rights-statement {
+        width: 60%;
+    }
+ }
