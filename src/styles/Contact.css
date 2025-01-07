@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   background-color: #fdf5c9;
-  /* width: 100vw; */
   justify-content: center;
   align-items: center;
   padding: 2rem;
@@ -76,7 +75,7 @@ textarea {
   border-radius: 10px;
   background-color: #55413b;
   color: #fdf5c9;
-  cursor: pointer;
+  cursor: none;
   transition: background-color 0.3s ease-in-out;
 }
 

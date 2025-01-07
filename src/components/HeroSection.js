@@ -9,6 +9,8 @@ import { IoClose } from "react-icons/io5";
 
 function HeroSection() {
   const [showNavbar, setshowNavbar] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [imageTransition, setImageTransition] = useState(false); 
 
   const images = [
     "interior2.jpg",
@@ -17,18 +19,25 @@ function HeroSection() {
     "interior1.jpg",
     "interior5.jpg",
   ];
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
+    setImageTransition(true);
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+      setImageTransition(false); 
+    }, 500);
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
+    setImageTransition(true); 
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      );
+      setImageTransition(false); 
+    }, 500); 
   };
 
   const handleClick = () => {
@@ -48,16 +57,14 @@ function HeroSection() {
               <li>About</li>
               <li>Contact Us</li>
               <li>Our Work</li>
-              {!showNavbar &&
-              <button className="consult-button">
-                <PiPhoneCall size={20} /> Book Consultation
-              </button>
-              }
+              {!showNavbar && (
+                <button className="consult-button">
+                  <PiPhoneCall size={20} /> Book Consultation
+                </button>
+              )}
             </ul>
             <div className={showNavbar ? "hamburger-active" : "hamburger"}>
-              <button
-                onClick={() => (window.location.href = `tel:${phoneNumber}`)}
-              >
+              <button onClick={() => (window.location.href = `tel:${phoneNumber}`)}>
                 <PiPhoneCall size={20} />
               </button>
               {showNavbar ? (
@@ -72,7 +79,7 @@ function HeroSection() {
       <div className="components">
         <div className="left-component">
           <h1>
-            Helping millions to build their dream <br />{" "}
+            Helping millions to build their dream <br />
             <Typewriter
               words={[
                 "workplace.",
@@ -90,7 +97,7 @@ function HeroSection() {
             />
           </h1>
           <p>
-            Transform your space into a masterpiece.We design and build
+            Transform your space into a masterpiece. We design and build
             extraordinary places that inspire, comfort, and delight.
           </p>
           <div className="button-component">
@@ -104,7 +111,7 @@ function HeroSection() {
           <div className="slider-container">
             <img
               src={images[currentIndex]}
-              className="slider-image"
+              className={`slider-image ${imageTransition ? "fade-out" : "fade-in"}`}
               alt="Slider"
             />
             <button className="slider-btn prev" onClick={handlePrev}>

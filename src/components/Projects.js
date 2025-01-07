@@ -48,7 +48,6 @@ function Projects() {
           </motion.div>
         </div>
 
-        {/* Project 2 */}
         <div className="project-images-right">
           <div className="image-section">
             <motion.img

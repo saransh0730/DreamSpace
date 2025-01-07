@@ -21,8 +21,6 @@ export default function Layout({ children }) {
         right: 0,
         height: "5px",
         originX: 0,
-        // background: "linear-gradient(to right, #55413b, #fdf5c9)",
-        // background: "#D98659",
         background: "#C69C6D",
         zIndex: 9999,
         }}

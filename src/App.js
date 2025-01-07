@@ -6,10 +6,12 @@ import Layout from './components/LayoutComponent';
 import Reviews from './components/Reviews';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import FloatingCursor from "./components/FloatingCursor";
 
 function App() {
   return (
     <div className="App">
+    <FloatingCursor />
     <Layout>
     <HeroSection/>
     <Services />
